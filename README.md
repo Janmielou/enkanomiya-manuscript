@@ -36,8 +36,6 @@ branch → `main` / root**. The site will be live at `https://<username>.github.
 ├── index.html            # markup only — links to the stylesheet and script
 ├── style.css             # all styles: palette, parchment, cover, chapters, motion
 ├── script.js             # scroll reveals + drifting dust motes (vanilla JS)
-├── uploads/
-│   └── index.html        # the original source document (preserved untouched)
 └── README.md             # this file
 ```
 
