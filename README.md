@@ -5,7 +5,7 @@ An interactive, single-file HTML page that transforms the forbidden in-game chro
 beautiful, immersive ancient manuscript — as if recovered from the deepest archives
 beneath Enkanomiya.
 
-![concept](docs) <!-- optional: add a screenshot here later -->
+![Before Sun and Moon Screenshot](imgs/before-sun-and-moon.png)
 
 ---
 
