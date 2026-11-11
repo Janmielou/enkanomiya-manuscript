@@ -31,12 +31,14 @@ branch → `main` / root**. The site will be live at `https://<username>.github.
 
 ## 📁 Project structure
 
-```
+```text
 .
-├── README.md            # this file
-├── index.html           # markup only — links to the stylesheet and script 
-├── script.js            # scroll reveals + drifting dust motes (vanilla JS)
-└── style.css            # all styles: palette, parchment, cover, chapters, motion
+├── imgs/
+│   └── before-sun-and-moon.png   # screenshots and asset images
+├── README.md                     # this file
+├── index.html                    # markup only – links to the stylesheet and script
+├── script.js                     # scroll reveals + drifting dust motes (vanilla JS)
+└── style.css                     # all styles: palette, parchment, cover, chapters, motion
 ```
 
 Clean separation of concerns: **HTML for structure, CSS for presentation, JS for
