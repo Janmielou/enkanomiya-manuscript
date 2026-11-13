@@ -382,7 +382,7 @@
             font-weight: 600;
             text-align: center;
             color: var(--gold-deep);
-            font-size: clamp(1.22rem, 3vw, 1.72rem);
+            font-size: clamp(1.28rem, 2.9vw, 1.66rem);
             letter-spacing: 0.12em;
             line-height: 1.4;
             margin: 0 auto 20px;
@@ -585,3 +585,74 @@
             .mote { display: none; }
             body { animation: none; }
         }
+
+        /* ============================================================
+           AMBIENT SOUND TOGGLE — a small moonlit button, bottom-right
+           ============================================================ */
+        .sound-toggle {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 1px solid rgba(217, 180, 92, 0.55);
+            background: radial-gradient(circle at 35% 30%, rgba(22, 38, 63, 0.96), rgba(10, 18, 32, 0.96));
+            color: var(--gold-bright);
+            cursor: pointer;
+            z-index: 70;
+            display: none; /* shown by script.js once the playlist is ready */
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(217, 180, 92, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .sound-toggle:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55), 0 0 18px rgba(217, 180, 92, 0.35);
+            border-color: rgba(217, 180, 92, 0.9);
+        }
+        .sound-toggle:focus-visible {
+            outline: 2px solid var(--gold-bright);
+            outline-offset: 3px;
+        }
+        .sound-toggle svg { width: 22px; height: 22px; }
+        .sound-toggle .wave { opacity: 0.3; transition: opacity 0.3s ease; }
+        .sound-toggle.playing { color: var(--gold-pale); border-color: var(--gold-bright); }
+        .sound-toggle.playing .wave { opacity: 1; animation: wavePulse 1.6s ease-in-out infinite; }
+        .sound-toggle.playing .wave:nth-of-type(3) { animation-delay: 0.35s; }
+        @keyframes wavePulse {
+            0%, 100% { opacity: 0.45; }
+            50%      { opacity: 1; }
+        }
+
+        /* ============================================================
+           CELESTIAL CURSOR SPARKLES — tiny gold stardust trailing the
+           pointer over the manuscript (desktop, motion allowed)
+           ============================================================ */
+        .spark {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, #f0dfa8 0%, rgba(217, 180, 92, 0.65) 40%, transparent 70%);
+            box-shadow: 0 0 8px 2px rgba(217, 180, 92, 0.35);
+            pointer-events: none;
+            opacity: 0;
+            animation-name: sparkle;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+        }
+        @keyframes sparkle {
+            0%   { transform: translate(0, 0) scale(0.4) rotate(0deg); opacity: 0; }
+            20%  { opacity: 0.9; }
+            100% { transform: translate(7px, -20px) scale(1) rotate(45deg); opacity: 0; }
+        }
+
+        @media (max-width: 640px) {
+            .sound-toggle { right: 14px; bottom: 14px; width: 46px; height: 46px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spark { display: none; }
+            .sound-toggle, .sound-toggle .wave { animation: none !important; transition: none !important; }
+        }
+        .sound-toggle.ready { display: flex; }
