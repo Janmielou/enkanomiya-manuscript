@@ -71,6 +71,12 @@ animation**. There is nothing to install — just open `index.html`.
   Came, the Seven Sovereigns, the Ruler of Time, Kairos, Tokoyo Ookami) get a restrained
   gold emphasis; the **Htoratsi** passage sits in a sealed midnight inset with a wax-seal
   SVG and a glowing inscribed name.
+- **Ambient sound** — a moonlit note button (bottom-right) fades in your chosen music.
+  Supports a **playlist of 1–3+ tracks**: layered together looping (`MODE = 'layer'`)
+  or played one-after-another on repeat (`MODE = 'queue'`). Never autoplays — the
+  reader clicks to play/pause; it pauses when the tab is hidden. See [🎵 Music](#-music).
+- **Celestial cursor sparkles** — on desktop, tiny gold stardust trails the pointer
+  across the manuscript (disabled for touch devices and under `prefers-reduced-motion`).
 - **Restrained motion** — page fade-in, scroll reveals, hover glows, gold shimmer,
   smooth scrolling. Fully disabled under `prefers-reduced-motion`, and the page is
   completely readable with JavaScript disabled.
@@ -101,6 +107,37 @@ Change a variable and the whole manuscript re-themes instantly. Fonts are loaded
 one Google Fonts `<link>` in the `<head>` of `index.html` — swap the `family=`
 parameters to change typefaces. Animations live in `script.js` and can be deleted
 entirely; the page remains fully readable without JavaScript.
+
+---
+
+## 🎵 Music
+
+The sound is driven by a small playlist at the **top of `script.js`**:
+
+```js
+var TRACKS = [
+    { src: 'audio/ambient.mp3', volume: 0.50 }
+    /* add more layers, e.g.:
+    { src: 'audio/wind.mp3',    volume: 0.20 },
+    { src: 'audio/chimes.mp3',  volume: 0.15 } */
+];
+var MODE = 'layer'; // 'layer' = all at once, each looping | 'queue' = one by one, then repeat
+```
+
+**To use your own music:**
+
+1. Put your audio files in the **`audio/`** folder (e.g. `audio/my-song.mp3`).
+2. Add one line per file to `TRACKS` — `src` is the path, `volume` is 0–1 (mix levels).
+3. Choose `MODE`: `'layer'` (all tracks play together, each looping — best for ambience:
+   drone + wind + chimes) or `'queue'` (tracks play in order, then the list repeats).
+4. Commit & push — done. Readers just click the ♪ button; browsers require that click
+   before any sound can play (autoplay is blocked by design).
+
+Tips: use **MP3** for universal compatibility (OGG works in Chrome/Firefox, M4A in Safari);
+keep each file a few MB (compress with `ffmpeg`, see `audio/ATTRIBUTION.md`); only use
+music you have rights to — royalty-free / CC0 / CC-BY (Pixabay, Freesound CC0, Wikimedia
+Commons, Incompetech) — never copyrighted game OST on a public site. Keep license credits
+in `audio/ATTRIBUTION.md`.
 
 ---
 
