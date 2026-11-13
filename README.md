@@ -33,12 +33,18 @@ branch → `main` / root**. The site will be live at `https://<username>.github.
 
 ```text
 .
+├── audio/
+│   ├── ATTRIBUTION.md                       # music credits / licenses
+│   ├── drift-along-the-lethe.flac           # your tracks (see TRACKS in script.js)
+│   ├── hope-or-nostalgia.flac
+│   ├── now-and-forevermore.flac
+│   └── tearless-souls-of-byakuyakoku.flac
 ├── imgs/
-│   └── before-sun-and-moon.png   # screenshots and asset images
-├── README.md                     # this file
-├── index.html                    # markup only – links to the stylesheet and script
-├── script.js                     # scroll reveals + drifting dust motes (vanilla JS)
-└── style.css                     # all styles: palette, parchment, cover, chapters, motion
+│   └── before-sun-and-moon.png             # real screenshot shown at the top of this README
+├── README.md                               # this file
+├── index.html                              # markup only – links to the stylesheet and script
+├── script.js                               # scroll reveals, motes, cursor sparkles, sound toggle
+└── style.css                               # all styles: palette, parchment, cover, chapters, motion
 ```
 
 Clean separation of concerns: **HTML for structure, CSS for presentation, JS for
