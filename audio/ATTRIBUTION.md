@@ -2,10 +2,10 @@
 
 Tracks in this folder (played via the `TRACKS` playlist in `script.js`):
 
-- `drift-along-the-lethe.flac`
-- `hope-or-nostalgia.flac`
-- `now-and-forevermore.flac`
-- `tearless-souls-of-byakuyakoku.flac`
+- `drift-along-the-lethe.mp3`
+- `hope-or-nostalgia.mp3`
+- `now-and-forevermore.mp3`
+- `tearless-souls-of-byakuyakoku.mp3`
 
 **Fill in for each track:** author, source/URL, and license (e.g. "own composition —
 all rights reserved", CC0, CC BY 3.0, etc.). Only ship music you have the rights to —
