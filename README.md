@@ -35,10 +35,10 @@ branch → `main` / root**. The site will be live at `https://<username>.github.
 .
 ├── audio/
 │   ├── ATTRIBUTION.md                       # music credits / licenses
-│   ├── drift-along-the-lethe.flac           # your tracks (see TRACKS in script.js)
-│   ├── hope-or-nostalgia.flac
-│   ├── now-and-forevermore.flac
-│   └── tearless-souls-of-byakuyakoku.flac
+│   ├── drift-along-the-lethe.mp3           # your tracks (see TRACKS in script.js)
+│   ├── hope-or-nostalgia.mp3
+│   ├── now-and-forevermore.mp3
+│   └── tearless-souls-of-byakuyakoku.mp3
 ├── imgs/
 │   └── before-sun-and-moon.png             # real screenshot shown at the top of this README
 ├── README.md                               # this file
